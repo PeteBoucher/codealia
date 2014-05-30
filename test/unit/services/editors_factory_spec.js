@@ -11,9 +11,12 @@ describe("EditorsFactory", function() {
     expect(color).toBe('green')
   });
 
-  describe('jQuery-style jasmine', function() {
+  describe('angular-style jasmine', function() {
     beforeEach(function() {
-      setFixtures('<div><div id="passions-editor"></div></div>')
+      var body = angular.element($document[0].body);
+      var fixture = angular.element('<div><div id="passions-editor"></div></div>');
+      body.append(fixture);
+
       element = $('div > div#passions-editor')
     });
 
